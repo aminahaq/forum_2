@@ -18,18 +18,15 @@ $this->breadcrumbs = array(
 <?php echo CHtml::link('Buat Thread Baru', array('thread/create', 'id' => $id)); ?>
 <br/>
 <?php
-if ($thread !== NULL) {
+if ($thread !== NULL)
+{
     $this->widget('zii.widgets.grid.CGridView', array(
         'id' => 'thread-grid',
         'dataProvider' => $thread->search(),
         //'emptyText'=>'Belum ada thread pada kategori ini',
         //'filter'=>$model,
         'columns' => array(
-            array(
-                'name' => 'Judul',
-                'type' => 'raw',
-                'value' => 'Chtml::link($data->judul,array(\'thread/view\',\'id\'=>$data->id))',
-            ),
+            'judul',
             array(
                 //'name'=>'kelas_id',
                 'header' => 'Rate',
@@ -51,9 +48,10 @@ if ($thread !== NULL) {
             ),
         ),
     ));
-} else {
+}
+ else {
     ?>
-    <p style="text-align: center">Belum ada thread di kategori ini</p>
-    <?php
+<p style="text-align: center">Belum ada thread di kategori ini</p>
+        <?php
 }
 ?>
