@@ -140,4 +140,28 @@ class User extends CActiveRecord {
         return $this->hashPassword($this->saltPassword, $password) === $this->password;
     }
 
+    /*
+    public function mostUC() {
+        $sql4 = 'SELECT count(id), user_id FROM comment GROUP BY user_id order by count(id) DESC';
+        $dataProvider4 = new CSqlDataProvider($sql4, array(
+            'keyField' => 'user_id',
+            'pagination' => array(
+                'pageSize' => 5,
+            ),
+        ));
+        return $dataProvider4;
+    }
+
+    public function mostUT() {
+        $sql3 = 'SELECT count(id), user_id FROM thread GROUP BY user_id order by count(id) DESC';
+        $dataProvider3 = new CSqlDataProvider($sql3, array(
+            'keyField' => 'user_id',
+            'pagination' => array(
+                'pageSize' => 5,
+            ),
+        ));
+        return $dataProvider3;
+    }
+     * 
+     */
 }

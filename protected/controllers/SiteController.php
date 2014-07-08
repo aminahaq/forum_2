@@ -32,7 +32,8 @@ class SiteController extends Controller {
         ));
         
         $news = News::model()->findAll($criteria);
-        $thread = thread::model()->findAll($criteria);
+        $thread = thread::model()->findAll($criteria); //mengambil 5 thread yang terakhir dibuat
+        
         $thread_category = thread::model()->findByAttributes(array());
         $this->render('index', array('news'=>$news, 'thread'=>$thread));
     }
